@@ -30,7 +30,7 @@ public class HolidayAdapter extends ArrayAdapter<Holiday> {
         tvHoliday = rowView.findViewById(R.id.tvHoliday);
         ivHoliday = rowView.findViewById(R.id.ivHoliday);
         Holiday current = holidays.get(position);
-        tvHoliday.setText(current.getHoliday());
+        tvHoliday.setText(current.getHoliday() + "\n" + current.getDate());
         if(current.isImage()) {
             ivHoliday.setImageResource(R.drawable.new_year);
         }

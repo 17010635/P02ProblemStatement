@@ -6,6 +6,7 @@ public class Holiday {
     private boolean icon;
     public Holiday(String holiday,String date, boolean image){
         this.holiday = holiday;
+        this.date = date;
         this.icon = image;
     }
     public String getHoliday(){
