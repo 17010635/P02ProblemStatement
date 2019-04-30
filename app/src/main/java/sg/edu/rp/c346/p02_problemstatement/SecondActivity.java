@@ -33,8 +33,8 @@ public class SecondActivity extends AppCompatActivity {
 
         if (selected == 1) {
             tvType.setText("Secular");
-            alHoliday.add(new Holiday("New Year's Day", "1 Jan 2017", true));
-            alHoliday.add(new Holiday("Labour Day", "1 May 2017" ,false));
+            alHoliday.add(new Holiday("New Year's Day", "1 Jan 2017", "new_year"));
+            alHoliday.add(new Holiday("Labour Day", "1 May 2017" ,"labour_day"));
 
             aa = new HolidayAdapter(this, R.layout.row, alHoliday);
             lvholiday.setAdapter(aa);
@@ -48,6 +48,23 @@ public class SecondActivity extends AppCompatActivity {
                 }
             });
 
+        } else if (selected == 2) {
+
+            tvType.setText("Ethnic & Religion");
+            alHoliday.add(new Holiday("Chinese New Year", "28-29 Jan 2017" ,"cny_day"));
+            alHoliday.add(new Holiday("Good Friday", "14 April 2017" ,"good_friday"));
+
+            aa = new HolidayAdapter(this, R.layout.row, alHoliday);
+            lvholiday.setAdapter(aa);
+
+            lvholiday.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    Holiday selected = alHoliday.get(position);
+                    Toast.makeText(SecondActivity.this, selected.getHoliday()+ " Date " + selected.getDate(), Toast.LENGTH_LONG).show();
+
+                }
+            });
         }
     }
 }

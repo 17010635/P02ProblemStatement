@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
         typesOfHoliday = new ArrayList<>();
         typesOfHoliday.add("Secular");
+        typesOfHoliday.add("Ethnic & Religion");
 
         aaHoliday = new ArrayAdapter<String>(this,android.R.layout.simple_expandable_list_item_1,typesOfHoliday);
         lvHolidays.setAdapter(aaHoliday);

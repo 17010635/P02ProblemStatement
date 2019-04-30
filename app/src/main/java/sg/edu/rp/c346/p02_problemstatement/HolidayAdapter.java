@@ -31,11 +31,17 @@ public class HolidayAdapter extends ArrayAdapter<Holiday> {
         ivHoliday = rowView.findViewById(R.id.ivHoliday);
         Holiday current = holidays.get(position);
         tvHoliday.setText(current.getHoliday() + "\n" + current.getDate());
-        if(current.isImage()) {
+        if(current.getIcon() == "new_year") {
             ivHoliday.setImageResource(R.drawable.new_year);
         }
-        else {
+        else if (current.getIcon() == "labour_day"){
             ivHoliday.setImageResource(R.drawable.labour_day);
+        } else if (current.getIcon() == "cny_day") {
+            ivHoliday.setImageResource(R.drawable.cny);
+        } else if (current.getIcon() == "good_friday"){
+            ivHoliday.setImageResource(R.drawable.good_friday);
+        } else {
+            ivHoliday.setImageResource(R.drawable.ic_launcher_background);
         }
         return rowView;
     }
